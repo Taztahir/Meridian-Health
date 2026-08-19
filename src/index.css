@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-danger: var(--danger);
+  --color-danger-light: var(--danger-light);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-accent: var(--accent);
+}
+
+:root {
+  --primary: #0d9488; /* teal-600 */
+  --primary-hover: #0f766e; /* teal-700 */
+  --primary-light: #f0fdfa; /* teal-50 */
+  --secondary: #115e59; /* teal-800 */
+  --danger: #dc2626; /* red-600 */
+  --danger-light: #fef2f2; /* red-50 */
+  --text-primary: #1e293b; /* slate-800 */
+  --text-secondary: #64748b; /* slate-500 */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc; /* slate-50 */
+  --accent: #14b8a6; /* teal-500 */
+}
+
+/* Custom smooth scrolling and scrollbar */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Offset for sticky navbar */
+}
+
+/* Base custom font stack */
+body {
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+/* Accessible Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: scroll !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
