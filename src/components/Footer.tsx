@@ -21,7 +21,7 @@ export default function Footer() {
     <footer id="contact" className="bg-white border-t border-slate-100 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-          
+
           {/* Logo & Description */}
           <div className="lg:col-span-4 flex flex-col space-y-4">
             <a href="#home" className="flex items-center space-x-2">
@@ -94,20 +94,12 @@ export default function Footer() {
                   (555) 123-4567
                 </a>
               </li>
-              <li className="pt-2">
-                <a
-                  href="tel:911"
-                  className="flex items-center justify-center space-x-2 w-full px-4 py-2.5 rounded-full border border-danger/25 bg-danger-light text-danger font-bold text-sm hover:bg-danger hover:text-white transition-all duration-300 shadow-sm"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>Emergency 911</span>
-                </a>
-              </li>
+
             </ul>
           </div>
 
         </div>
-        
+
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center space-x-4">

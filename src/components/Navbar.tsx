@@ -3,11 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, HeartPulse, Phone } from 'lucide-react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-interface NavbarProps {
-  onBookClick: () => void;
-}
-
-export default function Navbar({ onBookClick }: NavbarProps) {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -82,21 +78,18 @@ export default function Navbar({ onBookClick }: NavbarProps) {
 
           {/* Action Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
-            <a
-              href="tel:911"
-              className="flex items-center space-x-2 px-4 py-2.5 rounded-full border border-danger/20 bg-danger-light text-danger font-semibold text-sm hover:bg-danger hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-danger/10 group cursor-pointer"
-            >
-              <Phone className="w-4 h-4 group-hover:animate-bounce" />
-              <span>Emergency 911</span>
-            </a>
-            <motion.button
-              onClick={onBookClick}
+
+            <motion.div
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="px-6 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white font-semibold text-sm shadow-md hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
             >
-              Book Appointment
-            </motion.button>
+              <NavLink
+                to="/contact"
+                className="px-6 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white font-semibold text-sm shadow-md hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 cursor-pointer text-center inline-block"
+              >
+                Book Appointment
+              </NavLink>
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -145,15 +138,13 @@ export default function Navbar({ onBookClick }: NavbarProps) {
                   <Phone className="w-5 h-5" />
                   <span>Emergency 911</span>
                 </a>
-                <button
-                  onClick={() => {
-                    setIsOpen(false);
-                    onBookClick();
-                  }}
-                  className="w-full px-4 py-3 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-center shadow-md transition-all duration-300 cursor-pointer"
+                <NavLink
+                  to="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full px-4 py-3 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-center shadow-md transition-all duration-300 cursor-pointer block"
                 >
                   Book Appointment
-                </button>
+                </NavLink>
               </div>
             </div>
           </motion.div>

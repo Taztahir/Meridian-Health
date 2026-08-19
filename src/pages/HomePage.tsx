@@ -3,14 +3,10 @@ import Stats from '../components/Stats';
 import Services from '../components/Services';
 import Testimonials from '../components/Testimonials';
 
-interface HomePageProps {
-  onBookClick: () => void;
-}
-
-export default function HomePage({ onBookClick }: HomePageProps) {
+export default function HomePage() {
   return (
     <main className="flex-grow">
-      <Hero onBookClick={onBookClick} />
+      <Hero />
       <Stats />
       <Services />
       <Testimonials />

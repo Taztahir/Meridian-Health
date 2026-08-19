@@ -1,11 +1,8 @@
 import { motion } from 'framer-motion';
 import { HeartPulse, Activity, Scan, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-interface ServicesPageProps {
-  onBookClick?: () => void;
-}
-
-export default function ServicesPage({ onBookClick }: ServicesPageProps) {
+export default function ServicesPage() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -91,12 +88,12 @@ export default function ServicesPage({ onBookClick }: ServicesPageProps) {
                 </ul>
 
                 <div className="pt-4">
-                  <button
-                    onClick={onBookClick}
-                    className="px-7 py-3.5 rounded-2xl bg-[#0d6e68] hover:bg-[#0b5b56] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-98"
+                  <Link
+                    to="/contact"
+                    className="inline-block px-7 py-3.5 rounded-2xl bg-[#0d6e68] hover:bg-[#0b5b56] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-98"
                   >
                     Schedule a Consultation
-                  </button>
+                  </Link>
                 </div>
               </div>
 
@@ -166,12 +163,12 @@ export default function ServicesPage({ onBookClick }: ServicesPageProps) {
                 </ul>
 
                 <div className="pt-4">
-                  <button
-                    onClick={onBookClick}
-                    className="px-7 py-3.5 rounded-2xl bg-[#0d6e68] hover:bg-[#0b5b56] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-98"
+                  <Link
+                    to="/contact"
+                    className="inline-block px-7 py-3.5 rounded-2xl bg-[#0d6e68] hover:bg-[#0b5b56] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-98"
                   >
                     Schedule a Consultation
-                  </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -217,12 +214,12 @@ export default function ServicesPage({ onBookClick }: ServicesPageProps) {
                 </ul>
 
                 <div className="pt-4">
-                  <button
-                    onClick={onBookClick}
-                    className="px-7 py-3.5 rounded-2xl bg-[#0d6e68] hover:bg-[#0b5b56] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-98"
+                  <Link
+                    to="/contact"
+                    className="inline-block px-7 py-3.5 rounded-2xl bg-[#0d6e68] hover:bg-[#0b5b56] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-98"
                   >
                     Schedule a Consultation
-                  </button>
+                  </Link>
                 </div>
               </div>
 
