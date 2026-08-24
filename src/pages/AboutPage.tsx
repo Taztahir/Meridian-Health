@@ -1,12 +1,11 @@
-import React from 'react';
-import { 
-  ShieldCheck, 
-  Heart, 
-  Eye, 
-  ArrowRight, 
-  Shield, 
-  CheckCircle2, 
-  Award 
+import {
+  ShieldCheck,
+  Heart,
+  Eye,
+  ArrowRight,
+  Shield,
+  CheckCircle2,
+  Award
 } from 'lucide-react';
 
 interface Specialist {
@@ -52,27 +51,27 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-slate-50/50 pt-28 pb-20 text-text-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
-        
+
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-light text-primary font-medium text-xs sm:text-sm border border-primary/10">
               <ShieldCheck className="w-4 h-4 text-primary" />
               <span>Established Excellence</span>
             </div>
-            
+
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-tight leading-[1.15]">
               About Our Healthcare Group
             </h1>
-            
+
             <p className="text-base sm:text-lg text-text-secondary font-light leading-relaxed max-w-xl">
               At <mark className="bg-yellow-300 text-text-primary px-1 font-normal rounded-sm">Meridian Health</mark>, we combine cutting-edge medical technology with compassionate care. Our commitment to clinical excellence ensures the highest standard of treatment for every patient.
             </p>
           </div>
 
           <div className="relative h-72 sm:h-96 lg:h-[420px] rounded-2xl overflow-hidden shadow-xl border border-slate-100">
-            <img 
-              src="/images/about-herimg.png"   
-              alt="Meridian Health Hospital Interior" 
+            <img
+              src="/images/about-herimg.png"
+              alt="Meridian Health Hospital Interior"
               className="w-full h-full object-cover"
             />
           </div>
@@ -119,9 +118,9 @@ export default function AboutPage() {
                 Our clinical team comprises highly credentialed experts dedicated to providing specialized care across a spectrum of medical disciplines.
               </p>
             </div>
-            
-            <a 
-              href="#physicians" 
+
+            <a
+              href="#physicians"
               className="inline-flex items-center gap-1.5 text-primary font-bold text-sm hover:underline transition-all whitespace-nowrap"
             >
               <span>View All Physicians</span>
@@ -133,9 +132,9 @@ export default function AboutPage() {
             {specialists.map((doctor, index) => (
               <div key={index} className="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm flex flex-col hover:shadow-md transition-shadow">
                 <div className="h-64 overflow-hidden bg-slate-100">
-                  <img 
-                    src={doctor.image} 
-                    alt={doctor.name} 
+                  <img
+                    src={doctor.image}
+                    alt={doctor.name}
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
@@ -147,8 +146,8 @@ export default function AboutPage() {
                     <h3 className="text-lg font-bold text-text-primary">{doctor.name}</h3>
                     <p className="text-xs text-text-secondary font-light">{doctor.credentials}</p>
                   </div>
-                  <a 
-                    href={doctor.profileLink} 
+                  <a
+                    href={doctor.profileLink}
                     className="text-xs font-semibold text-text-secondary hover:text-primary transition-colors pt-3 border-t border-slate-100 inline-block"
                   >
                     View Profile
