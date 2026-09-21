@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RECENT_POSTS } from "../data/mimockData";
 import { Mail, Search } from "lucide-react";
+import type { ReactNode } from "react";
 
 export const TEAL = "#0F6E63";
 export const TEAL_DARK = "#0B564D";
@@ -14,7 +15,7 @@ export const CATEGORIES = [
 
 
 
-export function CategoryPill({ children }) {
+export function CategoryPill({ children }: { children: ReactNode }) {
   return (
     <span
       className="inline-block text-xs font-semibold px-3 py-1 rounded-full"
@@ -26,7 +27,7 @@ export function CategoryPill({ children }) {
 }
 
 
-export function SectionCard({ children, className = "" }) {
+export function SectionCard({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <div
       className={`bg-white rounded-xl border border-gray-200 p-6 ${className}`}
@@ -36,7 +37,7 @@ export function SectionCard({ children, className = "" }) {
   );
 }
 
-export function RecentPostsCard({ onOpen }) {
+export function RecentPostsCard({ onOpen }: { onOpen: (id: string) => void }) {
   return (
     <SectionCard>
       <h3 className="text-lg font-bold text-gray-900 mb-4 pb-4 border-b border-gray-100">
@@ -118,7 +119,7 @@ export function NewsletterCard() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email) return;
     setSubmitted(true);

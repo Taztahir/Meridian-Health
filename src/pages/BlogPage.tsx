@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowLeft, Clock } from "lucide-react";
 import { Pagination } from "../features/Pagination";
 import { ARTICLES, FEATURED_POST, RECENT_POSTS } from "../data/mimockData";
+import type { Article, BodyBlock } from "../data/mimockData";
 import { CategoriesCard, CategoryPill, NewsletterCard, RecentPostsCard, SearchBox, TEAL } from "../features/cards";
 import { ArticleCard } from "../features/ArticleCard";
 
@@ -13,7 +14,7 @@ const ALL_ARTICLES = [FEATURED_POST, ...ARTICLES, ...RECENT_POSTS];
 // Featured / hero article
 // ---------------------------------------------------------------------------
 
-function FeaturedPost({ post, onOpen }) {
+function FeaturedPost({ post, onOpen }: { post: Article; onOpen: (id: string) => void }) {
   return (
     <article className="bg-white rounded-xl border border-gray-200 overflow-hidden">
       <button
@@ -54,7 +55,7 @@ function FeaturedPost({ post, onOpen }) {
 // Article detail ("Read More" destination)
 // ---------------------------------------------------------------------------
 
-function ArticleDetail({ article, onBack, onOpen }) {
+function ArticleDetail({ article, onBack, onOpen }: { article: Article; onBack: () => void; onOpen: (id: string) => void }) {
   // Suggest up to 3 other articles, preferring the same category.
   const related = ALL_ARTICLES.filter((a) => a.id !== article.id)
     .sort((a, b) => (a.category === article.category ? -1 : 0) - (b.category === article.category ? -1 : 0))
@@ -101,7 +102,7 @@ function ArticleDetail({ article, onBack, onOpen }) {
 
           {/* Body content */}
           <div className="max-w-2xl">
-            {article.body?.map((block, i) =>
+            {article.body?.map((block: BodyBlock, i: number) =>
               block.type === "h" ? (
                 <h2
                   key={i}
@@ -145,13 +146,13 @@ function ArticleDetail({ article, onBack, onOpen }) {
 
 const BlogPage = () => {
   const [page, setPage] = useState(1);
-  const [activeId, setActiveId] = useState(null);
+  const [activeId, setActiveId] = useState<string | null>(null);
 
   const activeArticle = activeId
     ? ALL_ARTICLES.find((a) => a.id === activeId)
     : null;
 
-  const openArticle = (id) => {
+  const openArticle = (id: string) => {
     setActiveId(id);
     window.scrollTo?.({ top: 0, behavior: "smooth" });
   };

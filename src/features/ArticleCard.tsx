@@ -1,6 +1,12 @@
 import { CategoryPill, TEAL } from "./cards";
+import type { Article } from "../data/mimockData";
 
-export function ArticleCard({ article, onOpen }) {
+interface ArticleCardProps {
+  article: Article;
+  onOpen: (id: string) => void;
+}
+
+export function ArticleCard({ article, onOpen }: ArticleCardProps) {
   return (
     <article className="bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full group">
       <button

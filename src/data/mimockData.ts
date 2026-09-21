@@ -1,5 +1,22 @@
 
-export const FEATURED_POST = {
+export interface BodyBlock {
+  type: "p" | "h";
+  text: string;
+}
+
+export interface Article {
+  id: string;
+  category: string;
+  date: string;
+  readTime?: string;
+  author?: string;
+  title: string;
+  excerpt: string;
+  image: string;
+  body?: BodyBlock[];
+}
+
+export const FEATURED_POST: Article = {
   id: "advancements-in-cardiac-care-2024",
   category: "Research",
   date: "October 15, 2024",
@@ -23,7 +40,7 @@ export const FEATURED_POST = {
   ],
 };
 
-export const RECENT_POSTS = [
+export const RECENT_POSTS: Article[] = [
   {
     id: "new-pediatric-wing-opens-next-month",
     title: "New Pediatric Wing Opens Next Month",
@@ -75,7 +92,7 @@ export const RECENT_POSTS = [
   },
 ]
 
-export const ARTICLES = [
+export const ARTICLES: Article[] = [
   {
     id: "wellness-tips-for-the-family",
     category: "Health Tips",

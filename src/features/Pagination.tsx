@@ -1,9 +1,14 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TEAL = "#0F6E63";
-const TEAL_DARK = "#0B564D";
 
-export function Pagination({ page, totalPages, onPageChange }) {
+interface PaginationProps {
+  page: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+}
+
+export function Pagination({ page, totalPages, onPageChange }: PaginationProps) {
   const pages = [1, 2, 3];
   return (
     <nav className="flex items-center justify-center gap-2 mt-12">
